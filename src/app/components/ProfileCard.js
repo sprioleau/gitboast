@@ -1,10 +1,9 @@
 import React from "react";
-import data from "../data/userData2";
 import { Card, CardTitle, CardImg, CardBody, Button } from "shards-react";
 import Emoji from "react-emoji-render";
 import { FiMapPin } from "react-icons/fi";
 
-const ProfileCard = () => {
+const ProfileCard = ({ data }) => {
 	const {
 		user: { avatarUrl, name, repositories, location, url, bio, status },
 	} = data;

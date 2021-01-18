@@ -1,17 +1,16 @@
 import React from "react";
-import data from "../data/userData2";
 import dayjs from "dayjs";
-import { Card, CardTitle, CardBody } from "shards-react";
+import { Card, CardTitle, CardBody, Progress } from "shards-react";
 import { FiExternalLink } from "react-icons/fi";
-import { GoRepo } from "react-icons/go";
+import { GoRepo, GoLock } from "react-icons/go";
 import { getNumberWithCommas } from "../utilities/utilityFunctions";
 
-const ProfileCard = () => {
+const ProfileCard = ({ data }) => {
 	// prettier-ignore
 	const {	user: { repositories: { nodes: repositories }}} = data;
 
 	return (
-		<Card>
+		<Card className="repositories-panel">
 			<CardBody>
 				<CardTitle>
 					<span className="repositories__icon">
@@ -41,32 +40,47 @@ const RepositoryListItem = ({ repository: { isPrivate, name, updatedAt, url, sta
 
 	const languagesArray = languages.edges.map((item) => ({
 		size: getNumberWithCommas(item.size),
-		color: item.node.color,
 		name: item.node.name,
+		percentage: (item.size / languages.totalSize).toFixed(2),
 	}));
 
 	return (
 		<li className="repositories-list__item" onClick={() => open(url)}>
 			<p>
 				<a href={url} target="blank">
+					{isPrivate ? <GoLock /> : ""}
 					{name} <FiExternalLink />
 				</a>
 			</p>
 			<p>{`Last updated: ${dayjs(updatedAt).format("MM/D/YYYY")}`}</p>
 			<p>{`Stars: ${stargazerCount}`}</p>
 			{languagesArray.length > 0 && (
-				<ul className="languages-list">
-					{languagesArray.map(({ name, color, size }) => (
-						<li key={`${name}-${size}`} className="languages-list-item">
-							<span style={{ color }} className="language">
-								{name}{" "}
-							</span>
-							<span className="size">{`${size} kb`}</span>
-						</li>
+				<>
+					<ProgressBar languagesArray={languagesArray} />
+					{languagesArray.map(({ name }, index) => (
+						<span key={name} className={`language l${index + 1}`}>
+							{name}{" "}
+						</span>
 					))}
-				</ul>
+				</>
 			)}
 			{isPrivate && <p>Private</p>}
 		</li>
+	);
+};
+
+const ProgressBar = ({ languagesArray }) => {
+	return (
+		<Progress multi>
+			{languagesArray.map(({ name, percentage }) => (
+				<Progress
+					key={`${name}-${percentage}`}
+					className="language-progress-bar"
+					bar
+					theme="none"
+					value={percentage * 100}
+				/>
+			))}
+		</Progress>
 	);
 };

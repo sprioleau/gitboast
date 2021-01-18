@@ -31,6 +31,10 @@ img.profile-card__image {
   padding: 2.5rem 0;
 }
 
+.repositories-panel {
+  margin-bottom: 1.5rem;
+}
+
 .repositories-list {
   display: flex;
   flex-wrap: wrap;
@@ -111,4 +115,64 @@ li {
 
 .repositories__icon svg {
   color: var(--orange);
+}
+
+.progress,
+.progress-bar {
+  height: 0.35rem;
+}
+
+.language-progress-bar:nth-of-type(1) {
+  background-color: var(--blue);
+}
+
+.language-progress-bar:nth-of-type(2) {
+  background-color: var(--yellow);
+}
+
+.language-progress-bar:nth-of-type(3) {
+  background-color: var(--teal);
+}
+
+.language-progress-bar:nth-of-type(4) {
+  background-color: var(--gray);
+}
+
+.language.l1 {
+  color: var(--blue);
+}
+
+.language.l2 {
+  color: var(--yellow);
+}
+
+.language.l3 {
+  color: var(--teal);
+}
+
+.language.l4 {
+  color: var(--gray);
+}
+
+.followers-panel__icon {
+  color: var(--purple);
+  font-size: 1.5rem;
+}
+
+.followers-list__location-icon {
+  color: var(--red);
+  font-size: 1.25rem;
+}
+
+.followers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.followers-list__item {
+  flex: 1 1 150px;
+  margin-bottom: 1.5rem;
 }
