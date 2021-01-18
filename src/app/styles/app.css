@@ -1,0 +1,114 @@
+.profile-card {
+  position: sticky;
+  top: 1.5rem;
+  align-self: flex-start;
+}
+
+img.profile-card__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.profile-card__location {
+  display: flex;
+  align-items: center;
+}
+
+.profile-card__location> :first-child {
+  margin-right: 0.25rem;
+}
+
+.profile-card__location svg {
+  font-size: 1.25rem;
+  color: var(--red);
+}
+
+.emoji {
+  margin-right: 0.5rem;
+}
+
+.container {
+  padding: 2.5rem 0;
+}
+
+.repositories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.repositories-list__item {
+  border: 1px solid #becad6;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  flex: 1 1 250px;
+  position: relative;
+  transition: transform 0.15s ease-out;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.repositories-list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px -5px rgba(0, 123, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+  z-index: 1
+}
+
+.repositories-list__item:hover {
+  border-color: #007bff;
+  transform: translateY(-3px);
+}
+
+.repositories-list__item:hover::before {
+  opacity: 1;
+}
+
+.repositories-list__item> :last-child {
+  margin-bottom: 0;
+}
+
+.repositories-list__item p {
+  margin-bottom: 0.5rem;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-row {
+  margin-bottom: 2rem;
+}
+
+.stats-card__icon svg {
+  font-size: 1.5rem;
+}
+
+.followers {
+  color: var(--indigo);
+}
+
+.following {
+  color: var(--cyan);
+}
+
+.stars {
+  color: var(--pink);
+}
+
+.gists {
+  color: var(--teal);
+}
+
+.repositories__icon svg {
+  color: var(--orange);
+}
