@@ -1,0 +1,38 @@
+.footer {
+	@include center;
+	font-size: 0.9rem;
+
+	&__footer-links {
+		display: flex;
+		margin-bottom: 0.5rem;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	&__link-wrapper {
+		margin-right: 2rem;
+		color: var(--pink);
+
+		.source-icon path {
+			stroke: var(--pink);
+		}
+
+		.about-icon {
+			font-size: 1rem;
+		}
+	}
+
+	&__link {
+		color: var(--gray);
+	}
+
+	&__byline {
+		color: var(--gray);
+	}
+
+	&__credit {
+		color: var(--blue);
+	}
+}

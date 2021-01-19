@@ -22,7 +22,7 @@ const ProfileCard = ({ data }) => {
 					{`${name}`}
 				</CardTitle>
 				{bio && <p>{`${bio}`}</p>}
-				<p>{`Repositories: ${repositories.totalCount}`}</p>
+				{repositories.totalCount > 0 && <p>{`Repositories: ${repositories.totalCount}`}</p>}
 				{location && (
 					<p className="profile-card__location">
 						<FiMapPin /> {location}

@@ -24,3 +24,9 @@ export const openInNewTab = (url) => {
 		win.focus();
 	}
 };
+
+// Get Label with Subject Verb Agreement
+export const getLabelWithSva = (label, value) => {
+	if (value === 1) return label.replace(/s$/, "");
+	return label;
+};

@@ -12,15 +12,15 @@ const ProfileCard = ({ data }) => {
 	const {	user: { repositories: { nodes: repositories }}} = data;
 
 	return (
-		<Card className="repositories-panel">
+		<Card className="repos">
 			<CardBody>
 				<CardTitle>
-					<span className="repositories__icon">
+					<span className="icon repos__icon">
 						<GoRepo />
 					</span>{" "}
 					Top Repos
 				</CardTitle>
-				<ul className="repositories-list">
+				<ul className="repos-list">
 					{repositories.map((repository) => {
 						return <RepositoryListItem key={`${repository.name}-${repository.url}`} repository={repository} />;
 					})}
@@ -42,11 +42,11 @@ const RepositoryListItem = ({
 	}));
 
 	return (
-		<li className="repositories-list__item" onClick={() => openInNewTab(url)}>
-			<header className="repositories-list__header">
-				<h4 className="repositories-list__repo-title">
+		<li className="repos-list__item" onClick={() => openInNewTab(url)}>
+			<header className="repos-list__header">
+				<h4 className="repos-list__repo-title">
 					{isPrivate ? (
-						<span className="icon lock">
+						<span className="icon lock-icon">
 							<FaLock />{" "}
 						</span>
 					) : (
@@ -54,20 +54,20 @@ const RepositoryListItem = ({
 					)}
 					{name} <FiExternalLink />
 				</h4>
-				<p className="repositories-list__repo-description">{description}</p>
+				<p className="repos-list__repo-description">{description}</p>
 			</header>
-			<div className="repositories-list__repo-details">
-				<div className="metadata">
+			<div className="repos-list__repo-details">
+				<div className="repos-list__metadata">
 					{stargazerCount > 0 && (
 						<p>
-							<span className="icon stars">
+							<span className="icon stars-icon">
 								<FaRegStar />
 							</span>
 							{stargazerCount}
 						</p>
 					)}
 					<p>
-						<span className="icon last-updated">
+						<span className="icon last-updated-icon">
 							<MdUpdate />
 						</span>
 						{`${dayjs(updatedAt).format("MM/D/YYYY")}`}
@@ -76,11 +76,11 @@ const RepositoryListItem = ({
 				{languagesArray.length > 0 && (
 					<>
 						<ProgressBar languagesArray={languagesArray} />
-						<div className="languages-wrapper">
+						<div className="repos-list__languages-wrapper">
 							{languagesArray.map(({ name, percentage }, index) => (
-								<div key={name} className={`language l${index + 1}`}>
-									<div className="color-indicator" /> {name}{" "}
-									<span className="percentage">{`${(percentage * 100).toFixed(1)}%`}</span>
+								<div key={name} className={`repos-list__language l${index + 1}`}>
+									<div className="repos-list__color-indicator" /> {name}{" "}
+									<span className="repos-list__percentage">{`${(percentage * 100).toFixed(1)}%`}</span>
 								</div>
 							))}
 						</div>
@@ -93,11 +93,11 @@ const RepositoryListItem = ({
 
 const ProgressBar = ({ languagesArray }) => {
 	return (
-		<Progress className="language-progress" multi>
+		<Progress className="repos-list__language-progress" multi>
 			{languagesArray.map(({ name, percentage }) => (
 				<Progress
 					key={`${name}-${percentage}`}
-					className="language-progress__bar"
+					className="repos-list__language-progress-bar"
 					bar
 					theme="none"
 					value={percentage * 100}

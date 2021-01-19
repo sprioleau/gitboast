@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import ProfileCard from "./components/ProfileCard";
 import ReposCard from "./components/ReposCard";
 import Search from "./components/Search";
-import StatsRow from "./components/StatsRow";
+import Stats from "./components/Stats";
 import FollowersCard from "./components/FollowersCard";
 import Footer from "./components/Footer";
 
@@ -24,7 +24,7 @@ const App = () => {
 		<Container className="container" fluid tag="main">
 			<Header />
 			<Search query={query} setQuery={setQuery} />
-			<StatsRow data={data} />
+			<Stats data={data} />
 			<Row noGutters={false}>
 				<Col sm={12} lg={4} className="profile-card">
 					<ProfileCard data={data} />
