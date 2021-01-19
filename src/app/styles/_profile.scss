@@ -1,0 +1,40 @@
+.profile-card {
+  position: sticky;
+  top: 1.5rem;
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+img.profile-card__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.profile-card__location {
+  display: flex;
+  align-items: center;
+}
+
+.profile-card__location> :first-child {
+  margin-right: 0.25rem;
+}
+
+.profile-card__location svg {
+  font-size: 1.25rem;
+  color: var(--red);
+}
+
+.github {
+  margin-right: 0.5rem;
+}
+
+.emoji {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .profile-card {
+    position: relative;
+    top: unset;
+  }
+}

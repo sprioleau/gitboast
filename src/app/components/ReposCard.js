@@ -43,8 +43,8 @@ const RepositoryListItem = ({
 
 	return (
 		<li className="repositories-list__item" onClick={() => openInNewTab(url)}>
-			<p>
-				<a href={url} target="blank">
+			<header className="repositories-list__header">
+				<h4 className="repositories-list__repo-title">
 					{isPrivate ? (
 						<span className="icon lock">
 							<FaLock />{" "}
@@ -53,47 +53,51 @@ const RepositoryListItem = ({
 						""
 					)}
 					{name} <FiExternalLink />
-				</a>
-			</p>
-			<p className="description">{description}</p>
-			<div className="metadata">
-				<p>
-					<span className="icon stars">
-						<FaRegStar />
-					</span>
-					{": "}
-					{stargazerCount}
-				</p>
-				<p>
-					<span className="icon last-updated">
-						<MdUpdate />
-					</span>
-					{": "}
-					{`${dayjs(updatedAt).format("MM/D/YYYY")}`}
-				</p>
-			</div>
-			{languagesArray.length > 0 && (
-				<>
-					<ProgressBar languagesArray={languagesArray} />
-					{languagesArray.map(({ name }, index) => (
-						<span key={name} className={`language l${index + 1}`}>
-							{name}{" "}
+				</h4>
+				<p className="repositories-list__repo-description">{description}</p>
+			</header>
+			<div className="repositories-list__repo-details">
+				<div className="metadata">
+					{stargazerCount > 0 && (
+						<p>
+							<span className="icon stars">
+								<FaRegStar />
+							</span>
+							{stargazerCount}
+						</p>
+					)}
+					<p>
+						<span className="icon last-updated">
+							<MdUpdate />
 						</span>
-					))}
-				</>
-			)}
-			{isPrivate && <p>Private</p>}
+						{`${dayjs(updatedAt).format("MM/D/YYYY")}`}
+					</p>
+				</div>
+				{languagesArray.length > 0 && (
+					<>
+						<ProgressBar languagesArray={languagesArray} />
+						<div className="languages-wrapper">
+							{languagesArray.map(({ name, percentage }, index) => (
+								<div key={name} className={`language l${index + 1}`}>
+									<div className="color-indicator" /> {name}{" "}
+									<span className="percentage">{`${(percentage * 100).toFixed(1)}%`}</span>
+								</div>
+							))}
+						</div>
+					</>
+				)}
+			</div>
 		</li>
 	);
 };
 
 const ProgressBar = ({ languagesArray }) => {
 	return (
-		<Progress multi>
+		<Progress className="language-progress" multi>
 			{languagesArray.map(({ name, percentage }) => (
 				<Progress
 					key={`${name}-${percentage}`}
-					className="language-progress-bar"
+					className="language-progress__bar"
 					bar
 					theme="none"
 					value={percentage * 100}

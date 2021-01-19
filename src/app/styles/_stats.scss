@@ -1,0 +1,27 @@
+.stats-row {
+  margin-bottom: 1rem;
+}
+
+.stats-card {
+  margin-bottom: 15px;
+}
+
+.stats-card__icon svg {
+  font-size: 1.5rem;
+}
+
+.followers {
+  color: var(--indigo);
+}
+
+.following {
+  color: var(--cyan);
+}
+
+.stars {
+  color: var(--pink);
+}
+
+.gists {
+  color: var(--teal);
+}

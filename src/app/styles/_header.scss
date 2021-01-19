@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 2rem;
+}
+
+.header__logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__logo {
+  display: block;
+  width: 3rem;
+}
+
+.header__page-title {
+  margin-bottom: 0;
+}
+
+.header__page-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.header__page-subtitle code {
+  font-size: 1.5rem;
+  padding: 0;
+}

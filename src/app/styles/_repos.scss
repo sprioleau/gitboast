@@ -1,0 +1,174 @@
+.repositories-panel {
+  margin-bottom: 1.5rem;
+}
+
+.repositories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.repositories-list__item {
+  border: 1px solid #becad6;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  flex: 1 1 250px;
+  position: relative;
+  transition: transform 0.15s ease-out;
+  cursor: pointer;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repositories-list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px -5px rgba(0, 123, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+  z-index: 1
+}
+
+.repositories-list__item:hover {
+  border-color: #007bff;
+  transform: translateY(-3px);
+}
+
+.repositories-list__item:hover::before {
+  opacity: 1;
+}
+
+.repositories-list__item p {
+  margin-bottom: 0.5rem;
+}
+
+.repositories__icon svg {
+  color: var(--orange);
+}
+
+.progress,
+.progress-bar {
+  height: 0.35rem;
+}
+
+.repositories-list__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repositories-list__repo-title {
+  font-size: 1.15rem;
+  margin-bottom: 0;
+  transition: all 0.25s ease-out;
+}
+
+.repositories-list__item:hover .repositories-list__repo-title {
+  color: #007bff;
+}
+
+.repositories-list__repo-description {
+  font-size: 0.9rem;
+}
+
+.metadata {
+  display: flex;
+  gap: 1rem;
+}
+
+.metadata p {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.metadata .icon {
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  display: flex;
+}
+
+.icon.stars {
+  margin-bottom: 1px;
+}
+
+.last-updated {
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+.stars {
+  color: var(--pink);
+  font-size: 1.25rem;
+}
+
+.languages-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.language-progress {
+  margin-bottom: 0.5rem;
+}
+
+.language-progress__bar:nth-of-type(1) {
+  background-color: var(--blue);
+}
+
+.language-progress__bar:nth-of-type(2) {
+  background-color: var(--pink);
+}
+
+.language-progress__bar:nth-of-type(3) {
+  background-color: var(--teal);
+}
+
+.language-progress__bar:nth-of-type(4) {
+  background-color: var(--gray);
+}
+
+.language {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.language .color-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+}
+
+.language .percentage {
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.language.l1 .color-indicator {
+  background-color: var(--blue);
+}
+
+.language.l2 .color-indicator {
+  background-color: var(--pink);
+}
+
+.language.l3 .color-indicator {
+  background-color: var(--teal);
+}
+
+.language.l4 .color-indicator {
+  background-color: var(--gray);
+}
