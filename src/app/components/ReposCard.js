@@ -2,8 +2,10 @@ import React from "react";
 import dayjs from "dayjs";
 import { Card, CardTitle, CardBody, Progress } from "shards-react";
 import { FiExternalLink } from "react-icons/fi";
-import { GoRepo, GoLock } from "react-icons/go";
-import { getNumberWithCommas } from "../utilities/utilityFunctions";
+import { GoRepo } from "react-icons/go";
+import { MdUpdate } from "react-icons/md";
+import { FaRegStar, FaLock } from "react-icons/fa";
+import { getNumberWithCommas, openInNewTab } from "../utilities/utilityFunctions";
 
 const ProfileCard = ({ data }) => {
 	// prettier-ignore
@@ -16,7 +18,7 @@ const ProfileCard = ({ data }) => {
 					<span className="repositories__icon">
 						<GoRepo />
 					</span>{" "}
-					Repositories
+					Top Repos
 				</CardTitle>
 				<ul className="repositories-list">
 					{repositories.map((repository) => {
@@ -30,14 +32,9 @@ const ProfileCard = ({ data }) => {
 
 export default ProfileCard;
 
-const RepositoryListItem = ({ repository: { isPrivate, name, updatedAt, url, stargazerCount, languages } }) => {
-	const open = (url) => {
-		const win = window.open(url, "_blank");
-		if (win != null) {
-			win.focus();
-		}
-	};
-
+const RepositoryListItem = ({
+	repository: { isPrivate, name, updatedAt, url, stargazerCount, languages, description },
+}) => {
 	const languagesArray = languages.edges.map((item) => ({
 		size: getNumberWithCommas(item.size),
 		name: item.node.name,
@@ -45,15 +42,36 @@ const RepositoryListItem = ({ repository: { isPrivate, name, updatedAt, url, sta
 	}));
 
 	return (
-		<li className="repositories-list__item" onClick={() => open(url)}>
+		<li className="repositories-list__item" onClick={() => openInNewTab(url)}>
 			<p>
 				<a href={url} target="blank">
-					{isPrivate ? <GoLock /> : ""}
+					{isPrivate ? (
+						<span className="icon lock">
+							<FaLock />{" "}
+						</span>
+					) : (
+						""
+					)}
 					{name} <FiExternalLink />
 				</a>
 			</p>
-			<p>{`Last updated: ${dayjs(updatedAt).format("MM/D/YYYY")}`}</p>
-			<p>{`Stars: ${stargazerCount}`}</p>
+			<p className="description">{description}</p>
+			<div className="metadata">
+				<p>
+					<span className="icon stars">
+						<FaRegStar />
+					</span>
+					{": "}
+					{stargazerCount}
+				</p>
+				<p>
+					<span className="icon last-updated">
+						<MdUpdate />
+					</span>
+					{": "}
+					{`${dayjs(updatedAt).format("MM/D/YYYY")}`}
+				</p>
+			</div>
 			{languagesArray.length > 0 && (
 				<>
 					<ProgressBar languagesArray={languagesArray} />

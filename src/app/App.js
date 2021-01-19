@@ -8,29 +8,36 @@ import "./styles/app.css";
 import { Container, Row, Col } from "shards-react";
 
 import data from "./data/userData2";
+
+import Header from "./components/Header";
 import ProfileCard from "./components/ProfileCard";
 import ReposCard from "./components/ReposCard";
 import Search from "./components/Search";
 import StatsRow from "./components/StatsRow";
 import FollowersCard from "./components/FollowersCard";
+import Footer from "./components/Footer";
 
 const App = () => {
 	const [query, setQuery] = useState("");
 
 	return (
-		<Container className="container" fluid tag="main">
-			<Search query={query} setQuery={setQuery} />
-			<StatsRow data={data} />
-			<Row noGutters={false}>
-				<Col sm={12} lg={4} className="profile-card">
-					<ProfileCard data={data} />
-				</Col>
-				<Col sm={12} lg={8}>
-					<ReposCard data={data} />
-					<FollowersCard data={data} />
-				</Col>
-			</Row>
-		</Container>
+		<>
+			<Header />
+			<Container className="container" fluid tag="main">
+				<Search query={query} setQuery={setQuery} />
+				<StatsRow data={data} />
+				<Row noGutters={false}>
+					<Col sm={12} lg={4} className="profile-card">
+						<ProfileCard data={data} />
+					</Col>
+					<Col sm={12} lg={8}>
+						<ReposCard data={data} />
+						<FollowersCard data={data} />
+					</Col>
+				</Row>
+			</Container>
+			<Footer />
+		</>
 	);
 };
 

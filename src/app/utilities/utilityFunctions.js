@@ -17,3 +17,10 @@ export const composeClasses = (classesObject) => {
 
 	return newClassList.join(" ");
 };
+
+export const openInNewTab = (url) => {
+	const win = window.open(url, "_blank");
+	if (win != null) {
+		win.focus();
+	}
+};
