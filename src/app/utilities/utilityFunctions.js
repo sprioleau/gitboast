@@ -30,3 +30,12 @@ export const getLabelWithSva = (label, value) => {
 	if (value === 1) return label.replace(/s$/, "");
 	return label;
 };
+
+export const truncateString = (string, truncateAfterChars) => {
+	if (string.length > truncateAfterChars) return `${string.substr(0, truncateAfterChars).trim()}...`;
+	return string;
+};
+
+export const spaceAfterComma = (string) => {
+	return string.split(",").join(", ");
+};

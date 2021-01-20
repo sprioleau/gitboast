@@ -1,40 +1,46 @@
-.profile-card {
-  position: sticky;
-  top: 1.5rem;
-  align-self: flex-start;
-  margin-bottom: 1.5rem;
+.profile {
+	position: sticky;
+	top: 1.5rem;
+	align-self: flex-start;
+	margin-bottom: 1.5rem;
+
+	p {
+		margin-bottom: 1rem;
+	}
+
+	&__location {
+		display: flex;
+		align-items: center;
+
+		& > :first-child {
+			margin-right: 0.25rem;
+		}
+
+		svg {
+			font-size: 1.25rem;
+			color: var(--red);
+		}
+	}
+
+	&__emoji {
+		position: absolute;
+		top: 0.25rem;
+		right: 1rem;
+		font-size: 2.5rem;
+	}
+
+	&__name {
+		margin-bottom: 0;
+	}
+
+	.github-icon {
+		margin-right: 0.5rem;
+	}
 }
 
-img.profile-card__image {
-  width: 100%;
-  object-fit: cover;
-}
-
-.profile-card__location {
-  display: flex;
-  align-items: center;
-}
-
-.profile-card__location> :first-child {
-  margin-right: 0.25rem;
-}
-
-.profile-card__location svg {
-  font-size: 1.25rem;
-  color: var(--red);
-}
-
-.github {
-  margin-right: 0.5rem;
-}
-
-.emoji {
-  margin-right: 0.5rem;
-}
-
-@media (min-width: 576px) {
-  .profile-card {
-    position: relative;
-    top: unset;
-  }
+@include sm {
+	.profile {
+		position: relative;
+		top: unset;
+	}
 }

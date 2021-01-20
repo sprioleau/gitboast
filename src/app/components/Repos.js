@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import dayjs from "dayjs";
-import { Card, CardTitle, CardBody, Progress } from "shards-react";
+import { Card, CardTitle, CardBody, Progress, Button } from "shards-react";
 import { FiExternalLink } from "react-icons/fi";
 import { GoRepo } from "react-icons/go";
 import { MdUpdate } from "react-icons/md";
 import { FaRegStar, FaLock } from "react-icons/fa";
 import { getNumberWithCommas, openInNewTab } from "../utilities/utilityFunctions";
 
-const ProfileCard = ({ data }) => {
+const Repos = ({ data }) => {
 	// prettier-ignore
-	const {	user: { repositories: { nodes: repositories }}} = data;
+	const { user: { repositories: { nodes: repositories } } } = data;
+	// const [sortBy, setSortBy] = useState("latest");
+	// const [repos, setRepos] = useState(repositories);
 
 	return (
 		<Card className="repos">
 			<CardBody>
-				<CardTitle>
-					<span className="icon repos__icon">
-						<GoRepo />
-					</span>{" "}
-					Top Repos
+				<CardTitle className="repos__title">
+					<div className="repos__title-wrapper">
+						<span className="icon repos__icon">
+							<GoRepo />
+						</span>{" "}
+						Latest Repos
+					</div>
+					{/* <ReposSort repos={repos} setRepos={setRepos} /> */}
 				</CardTitle>
 				<ul className="repos-list">
 					{repositories.map((repository) => {
@@ -30,7 +35,7 @@ const ProfileCard = ({ data }) => {
 	);
 };
 
-export default ProfileCard;
+export default Repos;
 
 const RepositoryListItem = ({
 	repository: { isPrivate, name, updatedAt, url, stargazerCount, languages, description },
@@ -104,5 +109,44 @@ const ProgressBar = ({ languagesArray }) => {
 				/>
 			))}
 		</Progress>
+	);
+};
+
+const ReposSort = ({ repos, setRepos }) => {
+	// console.log({
+	// 	unsorted: [...repos].map(({ updatedAt }) => updatedAt),
+	// 	sorted: [...repos]
+	// 		.sort((a, b) => (dayjs(a.updatedAt).isBefore(dayjs(b.updatedAt)) ? 1 : -1))
+	// 		.map(({ updatedAt }) => dayjs(updatedAt).format("M/D/YYYY")),
+	// });
+
+	const handleSortBy = (sortBy) => {
+		let sortedArray = [...repos].sort((a, b) => a[sortBy] - b[sortBy]);
+
+		if (sortBy === "updatedAt") {
+			sortedArray = [...repos].map(({ updatedAt }) => updatedAt).sort((a, b) => (dayjs(a).isBefore(dayjs(b)) ? 1 : -1));
+		}
+
+		setRepos(sortedArray);
+
+		console.log({
+			repos: repos.map(
+				({ updatedAt, stargazerCount }) => `${dayjs(updatedAt).format("M/D/YYYY")} ✨:${stargazerCount}`
+			),
+			sortedArray: [...repos].map(
+				({ updatedAt, stargazerCount }) => `${dayjs(updatedAt).format("M/D/YYYY")} ✨:${stargazerCount}`
+			),
+		});
+	};
+
+	return (
+		<div className="repos__sort-by">
+			<Button pill theme="primary" size="sm" onClick={() => handleSortBy("name")}>
+				Latest
+			</Button>
+			<Button pill theme="success" size="sm" onClick={() => handleSortBy("stargazerCount")}>
+				Stars
+			</Button>
+		</div>
 	);
 };

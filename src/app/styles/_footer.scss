@@ -1,6 +1,8 @@
 .footer {
 	@include center;
 	font-size: 0.9rem;
+	padding: 2rem 0;
+	background-color: var(--dark);
 
 	&__footer-links {
 		display: flex;
@@ -26,13 +28,20 @@
 
 	&__link {
 		color: var(--gray);
+		transition: all 0.25s ease-out;
+
+		&:hover {
+			color: var(--pink);
+		}
 	}
 
 	&__byline {
 		color: var(--gray);
+		font-weight: 300;
 	}
 
 	&__credit {
-		color: var(--blue);
+		color: var(--yellow);
+		font-weight: 400;
 	}
 }
