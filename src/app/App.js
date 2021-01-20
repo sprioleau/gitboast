@@ -14,7 +14,7 @@ import ProfileCard from "./components/Profile";
 import ReposCard from "./components/Repos";
 import Search from "./components/Search";
 import Stats from "./components/Stats";
-import FollowersCard from "./components/FollowersCard";
+import FollowersCard from "./components/Followers";
 import Footer from "./components/Footer";
 
 const App = () => {

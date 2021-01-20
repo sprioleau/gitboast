@@ -4,7 +4,7 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { openInNewTab, truncateString, spaceAfterComma } from "../utilities/utilityFunctions";
 
-const FollowersCard = ({ data }) => {
+const Followers = ({ data }) => {
 	const {
 		user: {
 			followers: { nodes: followers },
@@ -14,10 +14,10 @@ const FollowersCard = ({ data }) => {
 	return (
 		<>
 			{followers.length > 0 && (
-				<Card className="followers-panel">
+				<Card className="followers">
 					<CardBody>
 						<CardTitle>
-							<span className="followers-panel__icon">
+							<span className="followers__icon">
 								<IoPeopleOutline />
 							</span>{" "}
 							Followers
@@ -25,7 +25,7 @@ const FollowersCard = ({ data }) => {
 						<ul className="followers-list">
 							{followers.map(({ id, avatarUrl, location, name, url }) => (
 								<li key={id} className="followers-list__item" onClick={() => openInNewTab(url)}>
-									<a className="followers-list__link-wrapper" href={url}>
+									<a className="followers-list__links" href={url}>
 										<img src={avatarUrl} className="followers-list__image" alt={`profile image for ${name}`} />
 										<main className="followers-list__container">
 											{name && (
@@ -53,4 +53,4 @@ const FollowersCard = ({ data }) => {
 	);
 };
 
-export default FollowersCard;
+export default Followers;
