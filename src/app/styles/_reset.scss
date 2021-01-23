@@ -1,0 +1,17 @@
+.container,
+.container-md,
+.container-sm {
+	max-width: unset;
+}
+
+@include sm {
+	.col-sm-6 {
+		flex: 0 0 50%;
+	}
+}
+
+@include xsm {
+	.col-sm-6 {
+		flex: 0 0 100%;
+	}
+}

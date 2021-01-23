@@ -23,19 +23,21 @@ const App = () => {
 	return (
 		<>
 			<Header />
-			<Container className="container" fluid tag="main">
-				<Search query={query} setQuery={setQuery} />
-				<Stats data={data} />
-				<Row noGutters={false}>
-					<Col sm={12} lg={4}>
-						<ProfileCard data={data} />
-					</Col>
-					<Col sm={12} lg={8}>
-						<ReposCard data={data} />
-						<FollowersCard data={data} />
-					</Col>
-				</Row>
-			</Container>
+			<main className="main-content">
+				<Container className="container" tag="main" fluid>
+					<Search query={query} setQuery={setQuery} />
+					<Stats data={data} />
+					<Row noGutters={false}>
+						<Col sm={12} lg={4} fluid>
+							<ProfileCard data={data} />
+						</Col>
+						<Col sm={12} lg={8} fluid>
+							<ReposCard data={data} />
+							<FollowersCard data={data} />
+						</Col>
+					</Row>
+				</Container>
+			</main>
 			<Footer />
 		</>
 	);

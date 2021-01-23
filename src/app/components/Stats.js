@@ -35,7 +35,7 @@ const Stats = ({ data }) => {
 			{totalStats > 0 && (
 				<Row noGutters={false} className="stats">
 					{stats.map(({ label, value, icon }) => (
-						<Col key={label} sm={12} lg={12 / stats.length} className="stats__column">
+						<Col key={label} sm={6} lg={12 / stats.length} className="stats__column">
 							<StatsCard
 								label={getLabelWithSva(label, value)}
 								value={value}

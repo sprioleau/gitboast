@@ -7,6 +7,10 @@ $btn-border-radius: 0.375rem;
 	&__search-wrapper {
 		display: flex;
 		position: relative;
+
+		input {
+			padding-right: 6.5rem;
+		}
 	}
 
 	&__search-field {
