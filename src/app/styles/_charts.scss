@@ -1,0 +1,48 @@
+.charts {
+	margin-bottom: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+
+	&__card {
+		flex: 0 0 calc(50% - 1rem);
+	}
+
+	&__icon {
+		font-size: 1.5rem;
+
+		&.fork-icon {
+			color: var(--teal);
+		}
+
+		&.star-icon {
+			color: var(--pink);
+		}
+
+		&.language-icon {
+			color: var(--orange);
+		}
+
+		&.primary-language-icon path {
+			stroke: var(--green);
+		}
+	}
+
+	.most-used-language {
+		@include center;
+		height: 100%;
+		padding: 2rem 2rem 4rem;
+
+		h5 {
+			@include center;
+			font-size: 4vw;
+			line-height: 1;
+		}
+	}
+}
+
+@include lg {
+	.languages-by-size-row {
+		margin-bottom: 2rem;
+	}
+}

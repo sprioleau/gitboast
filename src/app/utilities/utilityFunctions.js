@@ -39,3 +39,13 @@ export const truncateString = (string, truncateAfterChars) => {
 export const spaceAfterComma = (string) => {
 	return string.split(",").join(", ");
 };
+
+export const countInstances = (array) => {
+	let result = {};
+
+	for (let i = 0; i < array.length; i++) {
+		result[array[i]] = (result[array[i]] || 0) + 1;
+	}
+
+	return Object.keys(result).map((key) => ({ [key]: result[key] }));
+};

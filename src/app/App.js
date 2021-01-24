@@ -16,6 +16,7 @@ import Search from "./components/Search";
 import Stats from "./components/Stats";
 import FollowersCard from "./components/Followers";
 import Footer from "./components/Footer";
+import Charts from "./components/Charts";
 
 const App = () => {
 	const [query, setQuery] = useState("");
@@ -27,15 +28,16 @@ const App = () => {
 				<Container className="container" tag="main" fluid>
 					<Search query={query} setQuery={setQuery} />
 					<Stats data={data} />
-					<Row noGutters={false}>
-						<Col sm={12} lg={4} fluid>
+					<Row noGutters={false} className="profile-repos-followers">
+						<Col sm={12} lg={4}>
 							<ProfileCard data={data} />
 						</Col>
-						<Col sm={12} lg={8} fluid>
+						<Col sm={12} lg={8}>
 							<ReposCard data={data} />
 							<FollowersCard data={data} />
 						</Col>
 					</Row>
+					<Charts data={data} />
 				</Container>
 			</main>
 			<Footer />

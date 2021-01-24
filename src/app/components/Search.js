@@ -9,7 +9,7 @@ const Search = ({ query, setQuery }) => {
 
 	return (
 		<Row noGutters={false} className="search">
-			<Col lg={12} fluid>
+			<Col lg={12}>
 				<Form className="search__form">
 					<FormGroup className="search__search-form">
 						<label htmlFor="#username">Search for a Github user</label>
