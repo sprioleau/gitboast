@@ -7,7 +7,7 @@ import "shards-ui/dist/css/shards.min.css";
 import "./styles/styles.scss";
 import { Container, Row, Col } from "shards-react";
 
-import data from "./data/userData2";
+import data from "./data/userData";
 
 import Header from "./components/Header";
 import ProfileCard from "./components/Profile";

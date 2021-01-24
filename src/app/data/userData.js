@@ -1,35 +1,37 @@
 export default {
 	user: {
 		login: "sprioleau",
-		avatarUrl: "https://avatars0.githubusercontent.com/u/49278940?u=6958d569cc1fddcee4f7dd741a3f5c0c2c93a172&v=4",
+		avatarUrl: "https://avatars.githubusercontent.com/u/49278940?u=6958d569cc1fddcee4f7dd741a3f5c0c2c93a172&v=4",
 		bio: "",
-		email: "",
 		location: null,
 		name: "San'Quan Prioleau",
 		websiteUrl: "http://www.studio1816designs.com",
 		url: "https://github.com/sprioleau",
 		repositories: {
-			totalCount: 10,
+			totalCount: 12,
 			nodes: [
 				{
 					isPrivate: true,
+					description: "Celebrating Wife's 30th Birthday",
 					name: "thirty",
-					nameWithOwner: "sprioleau/thirty",
 					updatedAt: "2019-06-02T21:06:57Z",
 					url: "https://github.com/sprioleau/thirty",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [],
 						totalSize: 0,
 						totalCount: 0,
 					},
+					primaryLanguage: null,
 				},
 				{
 					isPrivate: false,
+					description: null,
 					name: "sprioleau.github.io",
-					nameWithOwner: "sprioleau/sprioleau.github.io",
 					updatedAt: "2020-07-17T20:05:03Z",
 					url: "https://github.com/sprioleau/sprioleau.github.io",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -51,13 +53,17 @@ export default {
 						totalSize: 10332,
 						totalCount: 2,
 					},
+					primaryLanguage: {
+						name: "HTML",
+					},
 				},
 				{
 					isPrivate: true,
+					description: "ESV Memory Verse App",
 					name: "memoria",
-					nameWithOwner: "sprioleau/memoria",
 					updatedAt: "2020-07-03T09:59:20Z",
 					url: "https://github.com/sprioleau/memoria",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -86,13 +92,17 @@ export default {
 						totalSize: 9330,
 						totalCount: 3,
 					},
+					primaryLanguage: {
+						name: "JavaScript",
+					},
 				},
 				{
 					isPrivate: true,
+					description: "Charts for C19 Insider Scoop Project led by Dr. Temi Prioleau",
 					name: "c19-insider-charts",
-					nameWithOwner: "sprioleau/c19-insider-charts",
 					updatedAt: "2020-07-19T11:07:18Z",
 					url: "https://github.com/sprioleau/c19-insider-charts",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -121,13 +131,17 @@ export default {
 						totalSize: 14789,
 						totalCount: 3,
 					},
+					primaryLanguage: {
+						name: "JavaScript",
+					},
 				},
 				{
 					isPrivate: true,
+					description: "Clone of Slack app",
 					name: "mini-slack",
-					nameWithOwner: "sprioleau/mini-slack",
 					updatedAt: "2020-08-14T02:51:35Z",
 					url: "https://github.com/sprioleau/mini-slack",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -156,26 +170,32 @@ export default {
 						totalSize: 30640,
 						totalCount: 3,
 					},
+					primaryLanguage: {
+						name: "CSS",
+					},
 				},
 				{
 					isPrivate: false,
+					description: "Building a page of the. new Black in AI website for a coding challenge",
 					name: "black-in-ai",
-					nameWithOwner: "sprioleau/black-in-ai",
 					updatedAt: "2020-09-22T09:04:24Z",
 					url: "https://github.com/sprioleau/black-in-ai",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [],
 						totalSize: 0,
 						totalCount: 0,
 					},
+					primaryLanguage: null,
 				},
 				{
 					isPrivate: false,
+					description: "Creating a markdown blog using static-site generation with NextJS",
 					name: "SSG-Blog",
-					nameWithOwner: "sprioleau/SSG-Blog",
 					updatedAt: "2020-10-12T11:37:57Z",
 					url: "https://github.com/sprioleau/SSG-Blog",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -197,13 +217,17 @@ export default {
 						totalSize: 6106,
 						totalCount: 2,
 					},
+					primaryLanguage: {
+						name: "CSS",
+					},
 				},
 				{
 					isPrivate: false,
+					description: "Clone of carbon.now.sh",
 					name: "code-adorn",
-					nameWithOwner: "sprioleau/code-adorn",
 					updatedAt: "2021-01-15T21:28:40Z",
 					url: "https://github.com/sprioleau/code-adorn",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -232,13 +256,17 @@ export default {
 						totalSize: 40465,
 						totalCount: 3,
 					},
+					primaryLanguage: {
+						name: "JavaScript",
+					},
 				},
 				{
 					isPrivate: false,
+					description: "Your gateway to pleasant development.",
 					name: "corsbegone",
-					nameWithOwner: "sprioleau/corsbegone",
 					updatedAt: "2021-01-16T10:32:14Z",
 					url: "https://github.com/sprioleau/corsbegone",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -260,13 +288,17 @@ export default {
 						totalSize: 3996,
 						totalCount: 2,
 					},
+					primaryLanguage: {
+						name: "CSS",
+					},
 				},
 				{
 					isPrivate: false,
+					description: "Show off all of that git goodness",
 					name: "gitboast",
-					nameWithOwner: "sprioleau/gitboast",
 					updatedAt: "2021-01-16T12:34:19Z",
 					url: "https://github.com/sprioleau/gitboast",
+					forkCount: 0,
 					stargazerCount: 0,
 					languages: {
 						edges: [
@@ -287,6 +319,9 @@ export default {
 						],
 						totalSize: 2793,
 						totalCount: 2,
+					},
+					primaryLanguage: {
+						name: "JavaScript",
 					},
 				},
 			],
